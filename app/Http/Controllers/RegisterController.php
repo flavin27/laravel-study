@@ -13,10 +13,12 @@ class RegisterController extends Controller
     public function postRegister(RegisterUserRequest $request)
     {
         $validated = $request->validated();
-        dd($validated);
         $user = User::create($validated);
         auth()->login($user);
-        event(new Registered($user));
-        return redirect()->route('home');
+
+        $message = 'You have been registered, ' . $user->name . '! Please login.';
+
+        return redirect()->route('home')->with('success', $message);
     }
 }
+
