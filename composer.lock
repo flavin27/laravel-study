@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bd9ad1a5b93adb2284b2afc207b8a267",
+    "content-hash": "7e604d6ee26eb36ea83c9651d8b528ef",
     "packages": [
         {
             "name": "brick/math",
@@ -2467,6 +2467,121 @@
                 }
             ],
             "time": "2023-11-12T21:59:55+00:00"
+        },
+        {
+            "name": "plexi/artisan-obfuscator",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rpdesignerfly/artisan-obfuscator.git",
+                "reference": "723f2cd4a4c610bb8d4d9176aadf6bd6de634b6d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rpdesignerfly/artisan-obfuscator/zipball/723f2cd4a4c610bb8d4d9176aadf6bd6de634b6d",
+                "reference": "723f2cd4a4c610bb8d4d9176aadf6bd6de634b6d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1",
+                "plexi/light-obfuscator": ">=1.0.0"
+            },
+            "require-dev": {
+                "illuminate/framework": "5.6.x"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "ArtisanObfuscator\\ServiceProvider"
+                    ],
+                    "aliases": {
+                        "ArtisanObfuscator": "ArtisanObfuscator\\Facade"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ArtisanObfuscator\\": "src/appmod"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ricardo Pereira",
+                    "email": "rpdesignerfly@gmail.com"
+                }
+            ],
+            "description": "Ofuscador de código PHP para projetos feitos com Laravel.",
+            "keywords": [
+                "artisan",
+                "laravel",
+                "obfuscating"
+            ],
+            "support": {
+                "issues": "https://github.com/rpdesignerfly/artisan-obfuscator/issues",
+                "source": "https://github.com/rpdesignerfly/artisan-obfuscator/tree/v1.2.0"
+            },
+            "time": "2018-08-10T00:15:02+00:00"
+        },
+        {
+            "name": "plexi/light-obfuscator",
+            "version": "v1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ricardopedias/light-obfuscator.git",
+                "reference": "1e78cff3b9a385ff3b17a0fa178279fb8e9aecc9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ricardopedias/light-obfuscator/zipball/1e78cff3b9a385ff3b17a0fa178279fb8e9aecc9",
+                "reference": "1e78cff3b9a385ff3b17a0fa178279fb8e9aecc9",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "require-dev": {
+                "illuminate/framework": "5.6.x"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "LightObfuscator\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ricardo Pereira",
+                    "email": "rpdesignerfly@gmail.com"
+                }
+            ],
+            "description": "Ofuscador de código para projetos feitos em PHP",
+            "keywords": [
+                "obfuscating",
+                "obfuscator",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/ricardopedias/light-obfuscator/issues",
+                "source": "https://github.com/ricardopedias/light-obfuscator/tree/v1.2.0"
+            },
+            "time": "2018-08-10T00:11:30+00:00"
         },
         {
             "name": "psr/clock",
