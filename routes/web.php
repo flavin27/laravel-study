@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('register');
 });
 
 Route::get('/register', function () {
@@ -20,9 +20,10 @@ Route::post('/login', 'App\Http\Controllers\LoginController@postLogin')->name('l
 
 Route::get('/logout', function () {
     auth()->logout();
-    return redirect()->route('home');
+    return redirect()->route('login');
 })->name('logout');
+
 
 Route::get('/home', function () {
     return view('home');
-})->name('home')->middleware('auth');
+})->middleware('auth');

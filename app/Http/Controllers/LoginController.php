@@ -3,27 +3,28 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LoginUserRequest;
-use Illuminate\Http\Request;
+use App\Models\User; // Import the User model
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class LoginController extends Controller
 {
     /**
      * Handle an authentication attempt.
      */
-    public function postLogin(LoginUserRequest $request): RedirectResponse
+    public function postLogin(LoginUserRequest $request)
     {
-        $credentials = $request->validated();
-
-        if ($this->guard()->attempt($credentials)) {
-            $request->session()->regenerate();
-
-            return redirect()->intended('home');
-        }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ])->onlyInput('email');
+        $credentials = $request->only('email', 'password');
+    
+        // Debugging information
+        $debugInfo = [
+            'credentials' => $credentials,
+            // Add any other information you want to display
+        ];
+    
+        // Pass the debug information to the view
+        return view('your.login.view', compact('debugInfo'));
     }
+    
 }

@@ -7,18 +7,18 @@ use App\Http\Requests\RegisterUserRequest;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
+use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
 {
     public function postRegister(RegisterUserRequest $request)
     {
-        $validated = $request->validated();
-        $user = User::create($validated);
-        auth()->login($user);
+        $user = User::create([
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'password' => $request->input('password'),
+        ]);
 
-        $message = 'You have been registered, ' . $user->name . '! Please login.';
-
-        return redirect()->route('home')->with('success', $message);
+        return redirect('/login');
     }
 }
-
